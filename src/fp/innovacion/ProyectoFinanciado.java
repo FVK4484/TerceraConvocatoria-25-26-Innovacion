@@ -27,7 +27,7 @@ public class ProyectoFinanciado extends Proyecto{
 		Checkers.check("El presupuesto debe ser mayor que 0."
 				, presupuesto > 0);
 		Checkers.check("La duración del proyecto debe ser menor de 2 años si el presupuesto es inferior a 10000 €"
-				, !(presupuesto < 100) || (getDuracion() / 365) < 2);
+				, !(presupuesto < 10000) || (getDuracion() / 365) < 2);
 		this.presupuesto = presupuesto;
 	}
 
@@ -44,7 +44,7 @@ public class ProyectoFinanciado extends Proyecto{
 	
 	public void setFechaInicio(LocalDate f) {
 		Checkers.check("No mayor de 2 años si presupuesto menor de 10000",
-		!(getPresupuesto() < 10000) || (getDuracion() / 365) < 2);
+		!(presupuesto < 10000) || (getDuracion() / 365) < 2);
 		super.setFechaInicio(f);
 		}
 

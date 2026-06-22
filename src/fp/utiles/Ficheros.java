@@ -20,8 +20,8 @@ public class Ficheros {
 	 * @param path
 	 *            Ruta del fichero a leer.
 	 * @return Una lista de String en la que cada elemento se corresponde con una de las
-	 *         líneas del fichero leido. El ordinal de la línea, por tanto, está
-	 *         relacionado con la posición de la línea en la lista.
+	 *         lï¿½neas del fichero leido. El ordinal de la lï¿½nea, por tanto, estï¿½
+	 *         relacionado con la posiciï¿½n de la lï¿½nea en la lista.
 	 */
 	public static List<String> leeFichero(String errMsg, String path) {
 		List<String> res = null;
@@ -62,10 +62,10 @@ public class Ficheros {
 	 * @param path
 	 * 		Ruta del fichero a leer.
 	 * @param deString_a_T 
-	 * 		Función que permite convertir una cadena a un objeto de tipo T. 
-	 *      La cadena se corresponde con una de las líneas del fichero.
-	 * @return Una lista de objetos tipo T creados con la información incluida en cada una de las
-	 *      líneas del fichero.
+	 * 		Funciï¿½n que permite convertir una cadena a un objeto de tipo T. 
+	 *      La cadena se corresponde con una de las lï¿½neas del fichero.
+	 * @return Una lista de objetos tipo T creados con la informaciï¿½n incluida en cada una de las
+	 *      lï¿½neas del fichero.
 	 */
 	public static <T> List<T> leeFichero(String errMsg, String path, Function<String, T> deString_a_T) {
 		List<T> res = null;
@@ -83,9 +83,9 @@ public class Ficheros {
 
 	/**
 	 * @param objetos Stream de objetos que se escriben en el fichero.
-	 * @param funcion Función que transforma el objeto en una cadena para escribirla en el fichero.
+	 * @param funcion Funciï¿½n que transforma el objeto en una cadena para escribirla en el fichero.
 	 * @param nombreFichero Nombre del fichero en el que se escribe el Stream de objetos
-	 * Como efecto lateral se crea un fichero con el nombre dado y la transformación del objeto
+	 * Como efecto lateral se crea un fichero con el nombre dado y la transformaciï¿½n del objeto
 	 * en cada linea.
 	 */
 	public static <T> void escribeFichero(String errMsg, Stream<T> objetos, Function<T, String> funcion, String nombreFichero) {
@@ -116,17 +116,17 @@ public class Ficheros {
 	/**
 	 * @param objeto Objeto que se quiere escribir en un fichero
 	 * @param nombreFichero Nombre y ruta del fichero en el que se va a escribir el objeto.
-	 * Como efecto lateral se crea un fichero con la representación como cadena del objeto.
+	 * Como efecto lateral se crea un fichero con la representaciï¿½n como cadena del objeto.
 	 */
 	public static <T> void escribeFichero(String errMsg, T objeto, String nombreFichero) {
 		escribeFichero(errMsg, Stream.of(objeto), Object::toString, nombreFichero);
 	}
 
 	/**
-	 * @param objetos Colección de objetos a guardar en el fichero
+	 * @param objetos Colecciï¿½n de objetos a guardar en el fichero
 	 * @param nombreFichero Nombre y ruta del fichero en el que se va a escribir el objeto.
-	 * Como efecto lateral se crea un fichero con la representación como cadena de los objetos
-	 * de la colección. Cada objeto está asociado a una linea del fichero.
+	 * Como efecto lateral se crea un fichero con la representaciï¿½n como cadena de los objetos
+	 * de la colecciï¿½n. Cada objeto estï¿½ asociado a una linea del fichero.
 	 */
 	public static <T> void escribeFichero(String errMsg, Collection<T> objetos, String nombreFichero) {
 		escribeFichero(errMsg, objetos.stream(), Object::toString, nombreFichero);
@@ -135,9 +135,9 @@ public class Ficheros {
 	/**
 	 * @param m Map 
 	 * @param nombreFichero Nombre y ruta del fichero en el que se van a escribir la entradas de
-	 *     la aplicación m.
-	 * Como efecto lateral se crea un fichero con la representación como cadena de la clave seguido de 
-	 * una flecha y la representación como cadena del valor.
+	 *     la aplicaciï¿½n m.
+	 * Como efecto lateral se crea un fichero con la representaciï¿½n como cadena de la clave seguido de 
+	 * una flecha y la representaciï¿½n como cadena del valor.
 	 *     
 	 */
 	public static <K, V> void escribeFichero(String errMsg, Map<K, V> m, String nombreFichero) {
